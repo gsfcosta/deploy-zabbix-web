@@ -1,0 +1,11 @@
+stages:
+  - build
+
+build_job:
+  stage: build
+  image:
+    name: private.registry/bitnami/kubectl:latest
+    entrypoint: ['']
+  script:
+    - export KUBECONFIG=/config.yaml
+    - kubectl apply -f frontend.yaml
